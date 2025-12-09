@@ -1,0 +1,227 @@
+:root {
+  /* Colors */
+
+  --light-blue: #c7fbef;
+  --light-purple: #e3d8ff;
+  --light-red: #f9c4c7;
+  --light-brown: #fff7ef;
+
+  --border-radius-main: 12px;
+  --border-radius-secondary: 8px;
+}
+
+body {
+  margin: 0;
+}
+
+.card-section span {
+  font-family: "Space Mono", monospace;
+}
+
+/*------------
+Card section
+------------*/
+
+.card-section {
+  height: 90vh;
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card text heading */
+
+.card-heading-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-heading-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.heading-icon {
+  display: flex;
+  align-items: center;
+  width: 14px;
+  height: 10px;
+  background-color: var(--light-purple);
+  padding: 15px 8px;
+  border-radius: calc(var(--border-radius-main) - 8px);
+}
+
+.heading-icon:first-child {
+  background-color: var(--light-blue);
+}
+
+.heading-icon:last-child {
+  background-color: var(--light-red);
+}
+
+/* Card front */
+
+.card-front-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+}
+
+.content {
+  background-color: var(--light-brown);
+}
+
+.card-front,
+.card-back {
+  display: flex;
+  flex-direction: column;
+  width: 286px;
+  height: 396px;
+  cursor: pointer;
+}
+
+.card-front,
+.card-back {
+  padding: 20px;
+  border-radius: var(--border-radius-main);
+}
+
+#design {
+  background-color: var(--light-blue);
+}
+
+#developer {
+  background-color: var(--light-purple);
+}
+
+#animation {
+  background-color: var(--light-red);
+}
+
+.card-header,
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flipped {
+  transform: rotate(-180deg);
+}
+
+.card-center {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-back {
+  background-color: white;
+}
+
+.icon-center {
+  width: 95px;
+}
+
+.icon-center.developer-icon-center {
+  width: 65px;
+}
+
+.icon-card {
+  width: 25px;
+}
+
+.icon-center.animation-icon-center {
+  width: 94px;
+}
+
+.animation-icon-footer,
+.animation-icon-header {
+  width: 21px;
+}
+
+.developer-icon-footer,
+.developer-icon-header {
+  width: 15px;
+}
+
+/* --- Flip layout --- */
+
+.card {
+  width: 286px;
+  height: 396px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: var(--border-radius-main);
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+.card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card float animation */
+.card {
+  animation: float 2.4s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Kort 1 (standard) */
+.card:nth-child(1) {
+  animation-duration: 2.2s;
+  animation-delay: 0s;
+}
+
+/* Kort 2 → litt raskere OG annerledes timing */
+.card:nth-child(2) {
+  animation-duration: 1.8s;
+  animation-delay: 0.7s;
+}
+
+/* Kort 3 → enda en unik rytme */
+.card:nth-child(3) {
+  animation-duration: 2.6s;
+  animation-delay: 0.15s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
