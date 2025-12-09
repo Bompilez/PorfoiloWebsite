@@ -1,0 +1,21 @@
+:root {
+  /* Farger */
+
+  --light-blue: #c7fbef;
+  --light-purple: #e3d8ff;
+  --light-red: #f9c4c7;
+  --light-brown: #fff7ef;
+
+  /* Border-radius */
+
+  --border-radius-main: 12px;
+  --border-radius-secondary: 8px;
+}
+
+body {
+  margin: 0;
+}
+
+.card-section span {
+  font-family: "Space Mono", monospace;
+}
