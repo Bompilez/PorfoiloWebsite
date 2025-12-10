@@ -44,31 +44,14 @@
 /* Kort front */
 
 .card-front-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: stretch; /* så kortene fyller høyden i cella */
 }
 
 .content {
   background-color: var(--light-brown);
-}
-
-.card-front,
-.card-back {
-  display: flex;
-  flex-direction: column;
-  width: 286px;
-  height: 396px;
-  cursor: pointer;
-}
-
-.card-front,
-.card-back {
-  padding: var(--padding-elements);
-  border-radius: var(--border-radius-main);
 }
 
 #design {
@@ -139,12 +122,6 @@
 
 /* --- Flip layout --- */
 
-.card {
-  width: 286px;
-  height: 396px;
-  perspective: 1000px;
-}
-
 .card-inner {
   position: relative;
   width: 100%;
@@ -176,8 +153,14 @@
 
 /* Kort sveve animasjon */
 .card {
+  width: 100%;
+  max-width: 420px; /* kan justeres opp/ned */
+  margin: 0 auto; /* midt i grid-cellen */
+  aspect-ratio: 3 / 4; /* bredde:høyde – juster til smak */
+  perspective: 1000px;
   animation: float 2.4s ease-in-out infinite alternate;
   will-change: transform;
+  cursor: pointer;
 }
 
 /* Kort 1 */

@@ -45,7 +45,8 @@ body {
 }
 
 .design-project-wrapper {
-  background-color: white;
+  background-color: var(--light-brown);
+  border: solid var(--light-red) 5px;
   display: flex;
   width: 100%;
   justify-content: space-between;
