@@ -6,10 +6,16 @@
   --light-red: #f9c4c7;
   --light-brown: #fff7ef;
 
+  --dark-black: #161312;
+
   /* Border-radius */
 
   --border-radius-main: 12px;
   --border-radius-secondary: 8px;
+
+  /* padding */
+
+  --padding-elements: 20px;
 }
 
 body {
@@ -18,4 +24,38 @@ body {
 
 .card-section span {
   font-family: "Space Mono", monospace;
+}
+
+.section {
+  height: 100vh;
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  background-color: var(--dark-black);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.design-project-container {
+  color: var(--dark-black);
+}
+
+.design-project-wrapper {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: var(--border-radius-main);
+}
+
+.design-project-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
