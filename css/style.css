@@ -28,9 +28,10 @@ body {
 
 .section {
   height: 100vh;
-  width: 1400px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 16px;  
 }
 
 .container {
@@ -59,4 +60,27 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+}
+
+
+/* Desktop: 3 kolonner hvis det er plass */
+@media (min-width: 1024px) {
+  .card-front-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .card-front-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* Mobil: 1 kolonne */
+@media (max-width: 639px) {
+  .card-front-container {
+    grid-template-columns: 1fr;
+  }
 }
