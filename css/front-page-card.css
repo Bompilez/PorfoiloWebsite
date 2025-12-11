@@ -49,23 +49,22 @@
   min-height: 100vh; /* så hele seksjonen fyller skjermen */
 }
 
-
 .card-height-container {
-  flex: 1;           
+  flex: 1;
   display: flex;
-  justify-content: center;     
-  align-items: center;         
+  justify-content: center;
+  align-items: center;
 }
-
 
 .card-front-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 20px;
+  margin-bottom: 20px;
   gap: 24px;
   width: 100%;
-  max-width: 1400px; 
+  max-width: 1400px;
 }
-
 
 .content {
   background-color: var(--light-brown);
@@ -204,5 +203,27 @@
   }
   100% {
     transform: translateY(-15px);
+  }
+}
+
+/* Desktop: 3 kolonner hvis det er plass */
+@media (min-width: 1024px) {
+  .card-front-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .card-front-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 44px;
+  }
+}
+
+/* Mobil: 1 kolonne */
+@media (max-width: 639px) {
+  .card-front-container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 74px;
   }
 }

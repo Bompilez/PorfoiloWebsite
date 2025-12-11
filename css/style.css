@@ -27,11 +27,22 @@ body {
 }
 
 .section {
-  height: 100vh;
+  min-height: 100vh;
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 16px;  
+  padding: 0 16px;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+  .section {
+    min-height: auto;
+  }
+
+  body {
+    overflow-y: auto; /* sørg for at man faktisk kan bla */
+  }
 }
 
 .container {
@@ -62,6 +73,10 @@ body {
   height: 100%;
 }
 
+.card-front-container {
+  display: grid;
+  gap: 20px; /* eller det du hadde før */
+}
 
 /* Desktop: 3 kolonner hvis det er plass */
 @media (min-width: 1024px) {
@@ -74,13 +89,11 @@ body {
   .card-front-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
 }
-
 
 /* Mobil: 1 kolonne */
 @media (max-width: 639px) {
   .card-front-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
