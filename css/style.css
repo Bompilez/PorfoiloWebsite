@@ -47,18 +47,18 @@ body {
 
 .container {
   background-color: var(--dark-black);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
 }
 
+/* Projects layout  */
+
 .design-project-container {
-  color: var(--dark-black);
+  color: white;
 }
 
 .design-project-wrapper {
-  background-color: var(--light-brown);
-  border: solid var(--light-red) 5px;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -70,30 +70,90 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1400px;
   height: 100%;
 }
 
-.card-front-container {
+.projects-main-info {
+  margin-right: 20vh;
+}
+
+.design-project-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.design-project-text {
+  max-width: 420px;
+}
+
+.projects-cards {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .design-project-wrapper {
+    flex-direction: column;
+  }
+
+  .design-project-text {
+    max-width: 100%;
+  }
+}
+
+.projects-cards {
   display: grid;
-  gap: 20px; /* eller det du hadde før */
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* Desktop: 3 kolonner hvis det er plass */
-@media (min-width: 1024px) {
-  .card-front-container {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+@media (max-width: 768px) {
+  .projects-cards {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
-  .card-front-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.projects-card {
+  color: black;
+  background-color: var(--light-brown);
+  border-radius: var(--border-radius-main);
+  overflow: hidden;
 }
 
-/* Mobil: 1 kolonne */
-@media (max-width: 639px) {
-  .card-front-container {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
+.projects-cards-text,
+.projects-cards-button {
+  padding: var(--padding-elements);
+}
+
+.projects-card-media {
+  position: relative;
+}
+
+.projects-cards-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+.projects-card-header {
+  position: absolute;
+  top: var(--padding-elements);
+  left: var(--padding-elements);
+  right: var(--padding-elements);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.projects-card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--padding-elements) var(--padding-elements);
+}
+
+.projects-card-footer span {
+  transform: rotate(180deg);
 }
