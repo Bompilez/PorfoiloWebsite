@@ -22,6 +22,48 @@ body {
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+}
+
+p,
+span,
+li,
+a {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(3rem, 4vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+p,
+li {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.design-project-text h2 {
+  color: var(--light-blue);
+}
+
 .card-section span {
   font-family: "Space Mono", monospace;
 }
@@ -62,8 +104,9 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 20px;
+  padding: 100px;
   border-radius: var(--border-radius-main);
+  border: solid var(--light-blue);
 }
 
 .design-project-content-container {
@@ -78,10 +121,27 @@ body {
   margin-right: 20vh;
 }
 
+.projects-heading-tag {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transform: scale(0.955);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  width: 14px;
+  height: 14px;
+  background-color: var(--light-blue);
+  padding: 15px 10px;
+  border-radius: calc(var(--border-radius-main) - 8px);
+}
+
+.projects-heading-tag p {
+  font-family: font-family: "Space Mono", monospace;
+}
+
 .design-project-wrapper {
   display: flex;
   gap: 24px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .design-project-text {
