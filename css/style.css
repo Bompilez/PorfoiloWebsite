@@ -8,6 +8,8 @@
 
   --dark-black: #161312;
 
+  --card-bg: #23201f;
+
   /* Border-radius */
 
   --border-radius-main: 12px;
@@ -21,6 +23,12 @@
 body {
   margin: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 
 p, h1, h2, h3 {
   hyphens: auto;
@@ -80,7 +88,7 @@ li {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 16px;
+  padding: 0 30px;
 }
 
 .design-project-section.section {
@@ -95,7 +103,7 @@ li {
   }
 
   body {
-    overflow-y: auto; /* sørg for at man faktisk kan bla */
+    overflow-y: auto;
   }
 }
 
@@ -116,7 +124,7 @@ li {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 100px;
+  padding: clamp(24px, 6vw, 100px);
   border-radius: var(--border-radius-main);
   border: solid var(--light-blue);
 }
@@ -147,7 +155,7 @@ li {
 }
 
 .projects-heading-tag p {
-  font-family: font-family: "Space Mono", monospace;
+  font-family: "Space Mono", monospace;
 }
 
 .design-project-wrapper {
@@ -164,13 +172,21 @@ li {
   flex: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .design-project-wrapper {
     flex-direction: column;
   }
+    .projects-main-info {
+      margin: 0px;
+    }
+  
 
   .design-project-text {
     max-width: 100%;
+  }
+
+  .design-project-wrapper {
+    align-items: start;
   }
 }
 
@@ -180,15 +196,15 @@ li {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-@media (max-width: 768px) {
+@media (max-width: 628px) {
   .projects-cards {
     grid-template-columns: 1fr;
   }
 }
 
 .projects-card {
-  color: black;
-  background-color: var(--light-brown);
+  color: white;
+  background-color: var(--card-bg);
   border-radius: var(--border-radius-main);
   overflow: hidden;
 }

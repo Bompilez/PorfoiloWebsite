@@ -10,12 +10,3 @@ cards.forEach((card, index) => {
   });
 });
 
-document.querySelectorAll("[data-scroll-target]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const id = btn.getAttribute("data-scroll-target");
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});

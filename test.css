@@ -1,0 +1,975 @@
+:root {
+  --dark-purple: #2E1A47;
+  --purple: #5C068C;
+  --light-purple: #F3DEEF;
+  --super-light-purple: #F9EEF7;
+
+  --light-yellow: #fbd872;
+  --light-coral: #ffa38b;
+  --light-green: #bde9c9;
+  --light-blue: #a4dbe8;
+  
+  --border-radius: 24px;
+  --border-radius-inner: 18px;
+}
+
+html {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+body {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+
+.page-section.vertical-alignment--middle:not(.content-collection):not(.gallery-section):not(.user-items-list-section):not(.editmode-changing-rowcount).section-height--small > .content-wrapper {
+    padding-top: clamp(30px, 6vw, 70px);
+    padding-bottom: clamp(30px, 6vw, 70px);
+}
+
+
+a, p{
+  font-family: var(--normal-text-font) !important;
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+  }
+}
+
+/* 404-Error underside */
+
+/* 404-side */
+.error-page {
+  display: flex;
+}
+
+.error-content {
+  width: 100%;
+  background: #ffffff;
+  padding: 2.5rem 2rem 2.25rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.10);
+}
+
+/* Stor 404-kode */
+.error-code {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #0066aa;
+  margin: 0 0 0.25rem;
+}
+
+/* Tittel */
+.error-title {
+  font-size: 1.6rem;
+  margin: 0 0 0.75rem;
+}
+
+/* Tekst */
+.error-text {
+  margin: 0 0 1.75rem;
+  color: #555;
+  font-size: 0.98rem;
+}
+
+/* Knapper / lenker */
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+
+/* Primærknapp */
+.error-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  background: #0066aa;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 102, 170, 0.35);
+  transition:
+    transform 0.12s ease-out,
+    box-shadow 0.12s ease-out,
+    background-color 0.12s ease-out;
+}
+
+.error-button:hover,
+.error-button:focus-visible {
+  background: #004f82;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(0, 79, 130, 0.45);
+}
+
+/* Sekundærlenke */
+.error-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: #ffffff;
+  color: #333;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition:
+    transform 0.12s ease-out,
+    box-shadow 0.12s ease-out,
+    border-color 0.12s ease-out,
+    background-color 0.12s ease-out;
+}
+
+.error-link:hover,
+.error-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(0, 0, 0, 0.35);
+  background-color: #f9fafb;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+}
+
+/* Responsiv tilpasning */
+@media (max-width: 600px) {
+  .error-content {
+    padding: 2rem 1.5rem 2rem;
+    border-radius: 20px;
+  }
+
+  .error-code {
+    font-size: 3rem;
+  }
+
+  .error-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* ===============================
+   HJEMMESYKEHUS – KONFERANSE
+   =============================== */
+
+/* Variabler */
+:root {
+
+/* font */
+
+  --heading-font: "marine-up", sans-serif;
+  --normal-text-font: "aptos", sans-serif;
+
+/* border */
+
+ --border-radius: 12px;
+--border-radius-inner: 8px;
+ --border-radius-button: 8px;
+}
+
+#collection-693ab855d9428545391f6bc1 a {
+  text-decoration: underline;
+  text-underline-offset: 4px; 
+}
+
+#collection-693ab855d9428545391f6bc1 a:hover {
+  text-decoration: none;
+
+}
+
+#collection-693ab855d9428545391f6bc1 h1,
+#collection-693ab855d9428545391f6bc1 h2,
+#collection-693ab855d9428545391f6bc1 h3,
+#collection-693ab855d9428545391f6bc1 h4 {
+  font-family: var(--heading-font);
+}
+
+
+/* Typografi */
+#collection-693ab855d9428545391f6bc1 .tittel {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-style: normal;
+}
+#collection-693ab855d9428545391f6bc1 .mellomtittel {
+  font-family: var(--normal-text-font);
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 0px;
+}
+
+#collection-693ab855d9428545391f6bc1 .tekst {
+  font-family: var(--normal-text-font);
+  font-size: 1.4rem;
+  color: #F7B5E0;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* ---------------------------
+   Kort / wrapper
+   --------------------------- */
+section[data-section-id="693ab855d9428545391f6bc3"].content-wrapper {
+  padding-top: 55px !important;
+  padding-bottom: 70px !important;
+}
+
+.hjemmesykehus-topbanner .content-wrapper {
+  position: relative;
+  overflow: visible !important;       
+  padding: 24px;
+  
+  min-height: 260px;
+  
+}
+
+/* Kort 1 */
+
+.text-bold {
+  font-weight: 800;
+  color: var(--purple);
+}
+
+
+/* YTRE GUTTER (mellom viewport og kortet) */
+section[data-section-id="693ab855d9428545391f6bc3"] {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+@media (min-width: 768px) {
+  section[data-section-id="693ab855d9428545391f6bc3"] {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+@media (min-width: 1200px) {
+  section[data-section-id="693ab855d9428545391f6bc3"] {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
+
+/* SELVE KORTET – midtstilt + INDRE luft */
+section[data-section-id="693ab855d9428545391f6bc3"] .content-wrapper {
+  background-color: var(--dark-purple) !important;
+  border-radius: 12px;
+  margin-top: 4rem !important;
+
+  /* midtstilling og bredde */
+  max-width: 1200px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+
+  /* INDRE luft (robust mot Squarespace-shorthand) */
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  min-height: 220px !important;
+}
+@media (min-width: 768px) {
+  section[data-section-id="693ab855d9428545391f6bc3"] .content-wrapper {
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+    
+  }
+}
+@media (min-width: 1200px) {
+  section[data-section-id="693ab855d9428545391f6bc3"] .content-wrapper {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+
+  }
+}
+
+
+
+/* ---------------------------
+   Innhold / tekst
+   --------------------------- */
+.hjemmesykehus-innhold {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  z-index: 2; 
+}
+
+.hjemmesykehus-innhold h1,
+.hjemmesykehus-innhold h4 { color: #fff; }
+
+.hjemmesykehus-innhold p  { color: var(--light-purple); margin: 0; }
+
+.hjemmesykehus-tekst { max-width: 780px; }
+
+/* ---------------------------
+   LOGO (som eget element)
+   --------------------------- */
+
+/* Basis: mobil/iPad – i normal flyt */
+.hjemmesykehus-topbanner .logo {
+  position: relative;
+  width: 50vw;
+  max-width: 560px;
+  margin-left: auto;
+  z-index: 1; 
+  pointer-events: none;
+}
+.hjemmesykehus-topbanner .logo img {
+  display: block;
+  width: 90%;
+  height: auto;
+  max-width: none;
+}
+
+/* ---------------------------
+   Breakpoints
+   --------------------------- */
+
+/* Mobil */
+@media (max-width: 767px) {
+  .hjemmesykehus-innhold {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  section[data-section-id="693ab855d9428545391f6bc3"] .content-wrapper { 
+overflow: hidden;
+}
+
+  .hjemmesykehus-tekst {
+    z-index: 2;
+  }
+
+  .hjemmesykehus-topbanner .logo {
+    position: relative; 
+    width: 740px;
+    max-width: none;
+    margin-top: -250px;
+    margin-left:  20px;
+    z-index: 1;
+
+
+  }
+}
+
+/* Små-desktop: glidende overgang 1024–1199px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hjemmesykehus-topbanner .content-wrapper {
+    padding: 48px;          /* litt mindre enn full desktop */
+    min-height: 380px;      /* gir plass så logoen ikke "henger for langt" */
+  }
+
+ .hjemmesykehus-tekst {
+    z-index: 2;
+  }
+
+  .hjemmesykehus-topbanner .logo {
+    position: absolute;     /* bytt til absolutt, men mer forsiktig */
+    width: 58vw;            /* responsiv i stedet for 700px fast */
+    max-width: none;
+    right: -6%;             /* mindre offset enn -10% */
+    bottom: -90%;           /* ikke så langt ned som -90% */
+z-index: 1;
+  }
+}
+
+/* Stor desktop: behold din opprinnelige */
+@media (min-width: 1024px) {
+  .hjemmesykehus-topbanner .content-wrapper {
+    padding: 56px;
+    min-height: 440px;
+  }
+
+.hjemmesykehus-tekst {
+    z-index: 2;
+  }
+
+  .hjemmesykehus-topbanner .logo {
+    position: absolute;
+    right: -10%;
+    bottom: -90%;
+    width: 700px;           /* eller øk om du vil */
+    max-width: none;
+    z-index: 1;
+  }
+}
+
+
+/* Stor desktop: behold din opprinnelige */
+@media (min-width: 1200px) {
+  .hjemmesykehus-topbanner .content-wrapper {
+    padding: 56px;
+    min-height: 440px;
+  }
+  .hjemmesykehus-topbanner .logo {
+    position: absolute;
+    right: -10%;
+    bottom: -90%;
+    width: 700px;           /* eller øk om du vil */
+    max-width: none;
+	z-index: 1;
+  }
+}
+
+/* Kort seksjon */ 
+
+/* Grid beholder like høyder per rad */
+.kort-konteiner {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .kort-konteiner {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch; 
+  }
+}
+
+/* Felles kort */
+.kort {
+  border-radius: 12px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Kort 1 (tekst) */
+.kort-1 { background-color: var(--light-purple); }
+
+/* ---- Kort 2 (bilde som følger høyden til kort-1) ---- */
+.kort-2 {
+  position: relative;  
+  padding: 0;  
+  overflow: hidden;    
+  border-radius: 12px;
+  min-height: 0;     
+}
+.kort-2 img {
+  position: absolute;    
+  inset: 0;       
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    
+  display: block;
+  border-radius: inherit;
+}
+
+/* Kort 3 (som du hadde) */
+.kort-3 { border: solid var(--dark-purple) 1px; }
+
+.kort-innhold h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--normal-text-font);
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 0px;
+}
+
+.kort-innhold h3 {
+  color: var(--purple);
+  font-size: 1.8rem;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-style: normal;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.kort-tekst .text-height-light {
+   color: var(--purple);
+  font-size: 1.3rem;
+  font-family: var(--normal-text-font);
+  font-weight: 600;
+}
+
+
+.kort-knapp a {
+  display: inline-block !important;
+  margin-top: 20px !important;
+  border-radius: 8px;
+  background-color: var(--purple);
+  color: white;
+  padding: 10px 20px 10px 20px;
+  margin-top: 25px;
+  border: solid transparent 2px;
+  transition: all 0.3s ease !important;
+}
+
+.kort-knapp a:hover {
+  border: solid var(--purple) 2px;
+  background-color: white;
+  cursor: pointer;
+  color: var(--purple);
+}
+
+/* Litt mindre padding på små skjermer, valgfritt */
+@media (max-width: 767px) {
+  .kort { padding: 24px; }
+  .kort-2 {
+    min-height: 300px;
+  }
+}
+
+/* HVA DU KAN FORVENTE SEKSJON */
+
+.expect-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 4rem;
+  padding: 40px;
+  background: #f7f5fb;
+  border-radius: 12px;
+}
+
+/* Tekstkolonnen */
+.expect-text h2 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+
+.expect-text p {
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+.expect-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.expect-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Egen "bullet" (lilla prikk) */
+.expect-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: #7e2ea8; /* juster til din lilla */
+  transform: translateY(-50%);
+}
+
+/* Bildekolonnen */
+.expect-image {
+  position: relative;        /* referanse for absolute-child */
+}
+
+/* Denne fyller hele høyden til kolonnen */
+.expect-image-inner {
+  position: absolute;
+  inset: 0;                  /* top:0; right:0; bottom:0; left:0; */
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* Selve bildet */
+.expect-image-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsivt: stack på mobil */
+@media (max-width: 900px) {
+  .expect-section {
+    grid-template-columns: 1fr;
+  }
+
+  .expect-image-inner {
+    position: relative;
+    height: 260px;           /* fast høyde på mobil, juster etter behov */
+  }
+}
+
+/* KNAPPER-SEKSJON */ 
+
+/* Container og generell stil */
+.hs-container {
+  font-family: var(--normal-text-font);
+}
+
+.hs-title {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: var(--purple);
+  font-family: var(--heading-font);
+}
+
+/* Accordion wrapper */
+.hs-accordion {
+  background: var(--super-light-purple);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+/* Tabs / knapperad */
+.hs-tabs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.hs-tab-button {
+  flex: 1 1 0;
+  border: none;
+  border-radius: var(--border-radius-button);
+  padding: 0.9rem 1.2rem;
+  background: white;
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hs-tab-button:hover {
+  background-color: var(--purple);
+  color: white;
+}
+
+.hs-tab-button.is-active {
+  background: var(--purple);
+  color: #ffffff;
+}
+
+/* Panel-området */
+.hs-panels {
+  background: #ffffff;
+  border-radius: var(--border-radius-inner);
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(31, 6, 61, 0.14);
+}
+
+/* Mobil */
+@media (max-width: 600px) {
+  .hs-panels {
+    padding: 20px; /* eller hva du ønsker */
+  }
+}
+
+.hs-panel {
+  display: none;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.hs-panel.is-visible {
+  display: block;
+}
+
+.hs-panel h3 {
+  margin-top: 0;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: var(--purple);
+  margin-bottom: 10px !important;
+}
+
+.hs-panel p,
+.hs-panel li{
+  color: black;
+  font-family: var(--normal-text-font);
+  font-size: 1.2rem;
+}
+
+/* Enkelt fade-animasjon */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobiljustering */
+@media (max-width: 700px) {
+  .hs-tabs {
+    flex-direction: column;
+  }
+
+  .hs-tab-button {
+    width: 100%;
+  }
+}
+
+
+/* Delta som utstiller seksjon */
+
+.utstiller-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+ background-color: #fff;
+border-radius: var(--border-radius);
+  padding: 40px;
+}
+
+/* Felles kolonnestil */
+.utstiller-col {
+  background: #ffffff;
+  border-radius: var(--border-radius);
+}
+
+/* Typografi */
+.utstiller-col-main h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 2rem;
+}
+
+.utstiller-col h3 {
+  margin-top: 0px !important;
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+}
+
+.utstiller-col h4 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.utstiller-col p {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+}
+
+/* Liste */
+.utstiller-list {
+  margin: 0 0 16px 20px;
+  padding: 0;
+}
+
+/* Pris-boks */
+.utstiller-price-box {
+  margin: 16px 0 50px;
+  padding: 14px 16px;
+  border-radius: var(--border-radius-inner);
+  background: var(--light-purple);
+}
+
+.utstiller-price-box .price-label {
+  font-size: 1rem;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.utstiller-price-box .price-main {
+  margin: 0 0 4px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.utstiller-price-box .price-note {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Lenker */
+.utstiller-col a {
+  color: #5c068c; /* lilla */
+  text-decoration: underline;
+}
+
+/* Responsiv: én kolonne på mobil */
+@media (max-width: 800px) {
+  .utstiller-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PROGRAM - UNDERSIDE */
+
+/* PROGRAM – wrapper */
+.conf-program {
+  background: var(--super-light-purple);
+  border-radius: var(--border-radius);
+  padding: 32px 24px;
+  box-shadow: 0 12px 35px rgba(31, 6, 61, 0.12);
+}
+
+/* Topptekst */
+.conf-program-header {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.conf-program-kicker {
+  font-family: var(--normal-text-font);
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin: 0 0 4px;
+}
+
+.conf-program-title {
+  font-family: var(--heading-font);
+  font-size: 2.1rem;
+  margin: 0 0 4px;
+  color: var(--dark-purple);
+}
+
+.conf-program-meta {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Dag-liste */
+.conf-program-days {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
+  .conf-program-days {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Dag-kort */
+.conf-program-day {
+  background: #fff;
+  border-radius: var(--border-radius-inner);
+  padding: 20px 20px 18px;
+  box-shadow: 0 6px 18px rgba(31, 6, 61, 0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.conf-program-day-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-bottom: 10px;
+  margin-bottom: 6px;
+}
+
+.conf-program-day-date {
+  font-family: var(--normal-text-font);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--purple);
+  margin: 0 0 2px;
+}
+
+.conf-program-day-title {
+  font-family: var(--heading-font);
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--dark-purple);
+}
+
+/* Sessions */
+.conf-program-sessions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.conf-program-session {
+  display: grid;
+  grid-template-columns: minmax(0, 90px) minmax(0, 1fr);
+  gap: 10px 16px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+}
+
+.conf-program-session:last-child {
+  border-bottom: none;
+}
+
+.conf-program-time {
+  font-family: var(--normal-text-font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-purple);
+}
+
+.conf-program-info h3 {
+  font-family: var(--normal-text-font);
+  font-size: 0.98rem;
+  margin: 0 0 2px;
+  color: #111;
+}
+
+.conf-program-extra {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #555;
+}
+
+/* Markér pauser litt annerledes */
+.conf-program-session--break {
+  background: rgba(248, 242, 252, 0.9);
+  margin: 2px -8px;
+  padding: 10px 8px;
+  border-radius: calc(var(--border-radius-inner) - 2px);
+  border-bottom: none;
+}
+
+.conf-program-session--break .conf-program-time {
+  color: var(--purple);
+}
+
+@media (max-width: 700px) {
+  .conf-program {
+    padding: 24px 18px;
+  }
+
+  .conf-program-day {
+    padding: 18px 16px 16px;
+  }
+
+  .conf-program-session {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .conf-program-time {
+    font-size: 0.85rem;
+  }
+}
+
+
