@@ -251,3 +251,178 @@ const initializeSectionNavigation = () => {
 };
 
 initializeSectionNavigation();
+
+const projectModal = document.querySelector("#project-modal");
+const projectModalTitle = document.querySelector("#project-modal-title");
+const projectModalDescription = document.querySelector("#project-modal-description");
+const projectModalImageOne = document.querySelector("#project-modal-image-1");
+const projectModalImageTwo = document.querySelector("#project-modal-image-2");
+const projectModalVideoWrap = document.querySelector("#project-modal-video-wrap");
+const projectModalVideo = document.querySelector("#project-modal-video");
+const projectModalVideoSource = document.querySelector("#project-modal-video-source");
+const projectModalVideoNote = document.querySelector("#project-modal-video-note");
+const projectModalVideoLink = document.querySelector("#project-modal-video-link");
+const projectReadMoreButtons = document.querySelectorAll(".project-read-more");
+let previouslyFocusedElement = null;
+
+const resolveVideoMimeType = (videoPath) => {
+  const lowerPath = (videoPath || "").toLowerCase();
+
+  if (lowerPath.endsWith(".mp4")) {
+    return "video/mp4";
+  }
+
+  if (lowerPath.endsWith(".webm")) {
+    return "video/webm";
+  }
+
+  if (lowerPath.endsWith(".mov")) {
+    return "video/quicktime";
+  }
+
+  return "video/mp4";
+};
+
+const closeProjectModal = () => {
+  if (!projectModal || !projectModal.classList.contains("is-open")) {
+    return;
+  }
+
+  projectModal.classList.remove("is-open");
+  projectModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("is-modal-open");
+
+  if (projectModalVideo && projectModalVideoSource) {
+    projectModalVideo.pause();
+    projectModalVideoSource.src = "";
+    projectModalVideoSource.type = "video/mp4";
+    projectModalVideo.load();
+  }
+
+  if (projectModalVideoWrap) {
+    projectModalVideoWrap.classList.add("is-hidden");
+  }
+
+  if (projectModalVideoNote) {
+    projectModalVideoNote.classList.add("is-hidden");
+  }
+
+  if (projectModalVideoLink) {
+    projectModalVideoLink.setAttribute("href", "#");
+  }
+
+  if (previouslyFocusedElement) {
+    previouslyFocusedElement.focus();
+  }
+};
+
+const openProjectModal = (buttonElement) => {
+  if (
+    !projectModal ||
+    !projectModalTitle ||
+    !projectModalDescription ||
+    !projectModalImageOne ||
+    !projectModalImageTwo
+  ) {
+    return;
+  }
+
+  const fallbackCard = buttonElement.closest(".projects-card");
+  const fallbackTitle = fallbackCard?.querySelector(".projects-cards-text h4")?.textContent?.trim();
+  const fallbackDescription = fallbackCard?.querySelector(".projects-cards-text p")?.textContent?.trim();
+  const fallbackImage = fallbackCard?.querySelector(".projects-cards-image img")?.getAttribute("src");
+
+  const title = buttonElement.dataset.modalTitle || fallbackTitle || "Prosjekt";
+  const description =
+    buttonElement.dataset.modalDescription ||
+    fallbackDescription ||
+    "Mer informasjon om prosjektet kommer snart.";
+  const imageOne = buttonElement.dataset.modalImage1 || fallbackImage || "";
+  const imageTwo = buttonElement.dataset.modalImage2 || fallbackImage || "";
+  const videoFile = buttonElement.dataset.modalVideo || "";
+
+  projectModalTitle.textContent = title;
+  projectModalDescription.textContent = description;
+  projectModalImageOne.src = imageOne;
+  projectModalImageTwo.src = imageTwo;
+  projectModalImageOne.alt = `${title} - bilde 1`;
+  projectModalImageTwo.alt = `${title} - bilde 2`;
+
+  if (projectModalVideoWrap && projectModalVideo && projectModalVideoSource) {
+    if (videoFile) {
+      const encodedVideoPath = encodeURI(videoFile);
+      projectModalVideoSource.src = encodedVideoPath;
+      projectModalVideoSource.type = resolveVideoMimeType(videoFile);
+      projectModalVideo.muted = true;
+      projectModalVideo.loop = true;
+      projectModalVideo.autoplay = true;
+      projectModalVideo.load();
+      projectModalVideoWrap.classList.remove("is-hidden");
+
+      if (projectModalVideoLink) {
+        projectModalVideoLink.setAttribute("href", encodedVideoPath);
+      }
+    } else {
+      projectModalVideo.pause();
+      projectModalVideoSource.src = "";
+      projectModalVideoSource.type = "video/mp4";
+      projectModalVideo.load();
+      projectModalVideoWrap.classList.add("is-hidden");
+    }
+  }
+
+  previouslyFocusedElement = document.activeElement;
+  projectModal.classList.add("is-open");
+  projectModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("is-modal-open");
+
+  const closeButton = projectModal.querySelector(".project-modal-close");
+  closeButton?.focus();
+};
+
+projectReadMoreButtons.forEach((button) => {
+  button.addEventListener("click", () => openProjectModal(button));
+});
+
+if (projectModal) {
+  projectModal.addEventListener("click", (event) => {
+    const targetElement = event.target;
+
+    if (!(targetElement instanceof Element)) {
+      return;
+    }
+
+    if (targetElement.closest("[data-close-modal]")) {
+      closeProjectModal();
+    }
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeProjectModal();
+  }
+});
+
+if (projectModalVideo) {
+  projectModalVideo.addEventListener("error", () => {
+    if (projectModalVideoNote) {
+      projectModalVideoNote.classList.remove("is-hidden");
+    }
+  });
+
+  projectModalVideo.addEventListener("loadeddata", () => {
+    const playPromise = projectModalVideo.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {
+        if (projectModalVideoNote) {
+          projectModalVideoNote.classList.remove("is-hidden");
+        }
+      });
+    }
+
+    if (projectModalVideoNote) {
+      projectModalVideoNote.classList.add("is-hidden");
+    }
+  });
+}

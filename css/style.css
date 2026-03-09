@@ -595,18 +595,112 @@ body.is-section-nav-mode .home-nav {
 }
 
 .projects-cards-text p,
-.projects-cards-button p {
+.projects-cards-button .project-read-more {
   font-size: 1rem;
   margin-top: 0px;
 }
 
-.projects-cards-button p {
+.projects-cards-button .project-read-more {
   border-radius: var(--border-radius-secondary);
   text-decoration: underline;
+  border: 0;
+  background: transparent;
+  color: var(--light-brown);
+  padding: 0;
+  cursor: pointer;
 }
 
 .projects-cards-button {
   padding: 0px var(--padding-elements) var(--padding-elements) var(--padding-elements);
+}
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+}
+
+.project-modal.is-open {
+  display: block;
+}
+
+.project-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.project-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(920px, calc(100% - 32px));
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  margin: 24px auto;
+  background: var(--light-brown);
+  color: var(--dark-black);
+  border-radius: var(--border-radius-main);
+  padding: 24px;
+}
+
+.project-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--dark-black);
+  color: var(--light-brown);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.project-modal-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.project-modal-images img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--border-radius-secondary);
+}
+
+.project-modal-video {
+  margin: 0 0 18px 0;
+}
+
+.project-modal-video video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: var(--border-radius-secondary);
+  background: #000;
+  object-fit: cover;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+body.is-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 680px) {
+  .project-modal-dialog {
+    padding: 18px;
+  }
+
+  .project-modal-images {
+    grid-template-columns: 1fr;
+  }
 }
 
 .projects-card-media {
